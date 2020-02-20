@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: #F1F7FC !important;
-    position: relative;
+    /*position: relative;*/
 }
 header.scds_header {
     padding-top: 25px;
