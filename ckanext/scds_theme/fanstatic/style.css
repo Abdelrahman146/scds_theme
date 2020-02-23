@@ -67,3 +67,17 @@ background: #f5f5f5;
  text_decoration: underline;
 }
 
+.resource-item .heading {
+ font-size:12px;
+ margin-bottom:0;
+ min-height:12px;
+ font-weight:normal;
+ color: #16252E;
+}
+
+
+.resource-item .description {
+ color:#000000;
+ font-size:14px;
+ font-weight:bold;
+}
