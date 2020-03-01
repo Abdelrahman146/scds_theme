@@ -88,3 +88,7 @@ background: #f5f5f5;
  padding: 15px;
  border-bottom: none;
 }
+
+.dataset-item:last-of-type {
+ padding-bottom: 15px;
+}
