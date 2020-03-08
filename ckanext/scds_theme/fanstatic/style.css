@@ -92,3 +92,62 @@ background: #f5f5f5;
 .dataset-item:last-of-type {
  padding-bottom: 15px;
 }
+
+
+.container .jumbotron {
+ border-radius: 10px;
+}
+
+.welcome-signage {
+ background-color: #FAFAFA;
+ color:	#494949;
+ border-radius: 10px;
+}
+
+.welcome-signage h2 {
+ color: #494949;
+}
+
+.homepage-wrapper {
+box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px 0px;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px 0px;
+background-color: white;
+padding: 20px;
+}
+
+
+.js .tab-content {
+ display: block;
+ background-color:#f5f5f5;
+ padding: 10px;
+ margin-bottom: 20px;
+}
+
+.panel-heading {
+  border-radius: 0px;
+  padding: 20px;
+}
+.panel-heading h3{
+ color:white;
+ margin:0;
+}
+
+.tag {
+ margin: 0 2.5px;
+ bakcground-color: #F1F7FC;
+ border-radius: 5px;
+ color: #494949;
+ border: none;
+ box-shadow: none;
+ -webkit-box-shadow: none;
+ padding: 1px 7px;
+ margin: 2px 2.5px;
+ 
+}
+
+a.tag:hover {
+ background-color: #004BA7;
+ border: none;
+ -webkit-box-shadow: none;
+ box-shadow: none;
+}
