@@ -21,14 +21,9 @@
              </div>
             </div>
             <div class="col-md-4">
-              <div class="lang">
-                <i class="fa fa-globe" aria-hidden="true" style="color: #004ba7;"></i>
-                <span class="lang-item"><a href="/es">ES</a></span>
-                <span class="lang-item"><a href="/gl">GL</a></span>
-                <span class="lang-item"><a href="/ca">CA</a></span>
-                <span class="lang-item"><a href="/eu">EU</a></span>
-                <span class="lang-item"><a href="/en">EN</a></span>
-              </div>
+{% block footer_lang %}
+          {% snippet "snippets/language_selector.html" %}
+        {% endblock %}
             </div>
           </div>
         </div>
