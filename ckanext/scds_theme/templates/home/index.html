@@ -7,11 +7,13 @@
      <div class="homepage-wrapper">
 
      <div class="welcome-signage jumbotron text-center">
-      <h2>BIENVENIDO/A</h2>
+      <h2>{{ _('WELCOME') }}</h2>
       <p style="font-size: 16px;">
-Los Datos Abiertos y su reutilización redundan en una mejora de la calidad de vida de los ciudadanos en la medida en la que son el punto de partida para el desarrollo de nuevos servicios y aplicaciones que no de no ser por la puesta a disposición que de ellos se realiza no estarían disponibles
-A través de este espacio, la Agrupación de Municipios Smart Costa del Sol, persigue que los datos y la información se publiquen de forma abierta, regular y reutilizable para todo el mundo, estableciendo nuevos mecanismos de comunicación permanente y transparente con la ciudadanía.
-A su vez se encuentran publicadas las licencias de cada uno de los conjuntos de datos, con la finalidad de facilitar su reutilización.
+{{ _('Open Data and its reuse result in an improvement in the quality of life of citizens to the extent that they are the starting '
+'point for the development of new services and applications, not for the fact that they are made available is carried out would not be '
+'available Through this space, the Smart Costa del Sol Municipalities Association seeks to make data and information published in an open, '
+'regular and reusable way for everyone, establishing new mechanisms for permanent and transparent communication with the citizenship.'
+' In turn, the licenses of each of the data sets are published, in order to facilitate their reuse.') }}
       </p>
      </div>
 
@@ -19,17 +21,17 @@ A su vez se encuentran publicadas las licencias de cada uno de los conjuntos de 
       <div class="col-xs-12 text-center">
 
        <ul class="nav nav-pills" style="display: flex; justify-content: center;">
-        <li class="active"><a data-toggle="tab" href="#organizations">Organizaciones</a></li>
-        <li><a data-toggle="tab" href="#groups">Grupos</a></li>
+        <li class="active"><a data-toggle="tab" href="#organizations">{{ _('Organizations') }}</a></li>
+        <li><a data-toggle="tab" href="#groups">{{ _('Groups') }}</a></li>
        </ul>
        <br>
 
-       <div class="tab-content">
-        <div id="organizations" class="tab-pane active">
+       <article class="orgz">
+        <div id="organizations" class="tab-content tab-pane active">
          <div class="row" style="display:inline-flex; flex-wrap: wrap; list-style: none; justify-content: center;">
     {% for org in h.scds_theme_list_organizations() %}
          <div class="col-md-4 col-sm-6">
-             <a href="/organization/{{org.name}}" class="thumbnail" data-toggle="tooltip" data-placement="bottom" title="{{ org.display_name }}">
+             <a href="{{ h.url_for('organization_read', action='read', id=org.name) }}" class="thumbnail" data-toggle="tooltip" data-placement="bottom" title="{{ org.display_name }}">
                 <img src="{{ org.image_display_url }}" alt="{{org.display_name}}" style="border-radius: 5px; margin-top:10px; margin-bottom: 5px;"/>
                 <p style="font-size: 12px; font-weight: bold;">{{org.display_name}}</p>
             </a>
@@ -37,11 +39,11 @@ A su vez se encuentran publicadas las licencias de cada uno de los conjuntos de 
     {% endfor %}
          </div>
         </div>
-        <div id="groups" class="tab-pane">
+        <div id="groups" class="tab-content tab-pane">
          <div class="row" style="display:inline-flex; flex-wrap: wrap; list-style: none; justify-content: center;">
     {% for group in h.scds_theme_list_groups() %}
          <div class="col-md-2 col-sm-3 col-xs-6">
-             <a href="/group/{{group.name}}" class="thumbnail" data-toggle="tooltip" data-placement="bottom" title="{{ group.display_name  }}">
+             <a href="{{ h.url_for('group_read', action='read', id=group.name) }}" class="thumbnail" data-toggle="tooltip" data-placement="bottom" title="{{ group.display_name  }}">
                 <img src="{{ group.image_display_url }}" alt="{{group.display_name}}" style="width: 60px; margin-top:10px; margin-bottom: 5px;"/>
                 <p style="font-size: 12px; font-weight: bold;">{{group.display_name}}</p>
             </a>
@@ -49,7 +51,7 @@ A su vez se encuentran publicadas las licencias de cada uno de los conjuntos de 
     {% endfor %}
          </div>
         </div>
-       </div>
+       </article>
 
       </div>
      </div>
@@ -58,13 +60,13 @@ A su vez se encuentran publicadas las licencias de cada uno de los conjuntos de 
     <div class="row">
     <div class="col-sm-6">
      <div class="panel panel-primary">
-      <div class="panel-heading"><h3><i class="fa fa-line-chart" aria-hidden="true"></i> Recientemente actualizado</h3></div>
+      <div class="panel-heading"><h3><i class="fa fa-line-chart" aria-hidden="true"></i> {{ _('Recently Updated') }}</h3></div>
       <div class="panel-body">
        <div class="list-group">
        {% for set in h.scds_theme_most_downloaded_datasets() %}
-        <a href="#" class="list-group-item" style="border:none">
+        <a href="{{ h.url_for('/dataset/{}'.format(set.name)) }}" class="list-group-item" style="border:none">
          <h4 class="list-group-item-heading">{{set.title}}</h4>
-         <p class="list-group-item-text"><strong>Organizacion:</strong> {{set.organization.title}}</p>
+         <p class="list-group-item-text"><strong>{{ _('Organization') }}:</strong> {{set.organization.title}}</p>
         </a>
        {% endfor %}
        </div>
@@ -73,7 +75,7 @@ A su vez se encuentran publicadas las licencias de cada uno de los conjuntos de 
     </div>
     <div class="col-sm-6">
      <div class="panel panel-primary">
-      <div class="panel-heading"><h3><i class="fa fa-tags" aria-hidden="true"></i> Nube De Etiquetas</h3></div>
+      <div class="panel-heading"><h3><i class="fa fa-tags" aria-hidden="true"></i> {{ _('Cloud of Tags') }}</h3></div>
       <div class="panel-body">
        {% snippet 'ckanext-discovery/snippets/tag_cloud.html', num_tags=50 %}
       </div>

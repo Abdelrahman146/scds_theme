@@ -3,21 +3,21 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <a href="/"><img class="footer_logo" alt="costa del sol" src="/a2f6392d6a3cb3d9e4cf2c7ac5b7336e.svg"></a>
-              <div><strong class="text-uppercase text-small">Quick Access</strong></div>
+              <a href="{{ h.url_for('/') }}"><img class="footer_logo" alt="costa del sol" src="/a2f6392d6a3cb3d9e4cf2c7ac5b7336e.svg"></a>
+              <div><strong class="text-uppercase text-small">{{ _('Quick Access') }}</strong></div>
               <div class="list-group footer_nav">
-               <a href="/" class="list-group-item">Descripción de la iniciativa</a>
-               <a href="#" class="list-group-item">Noticias, novedades y actualizaciones</a>
-               <a href="#" class="list-group-item">Documentación y ayuda</a>
-               <a href="#" class="list-group-item">Terminos y licencias</a>
+               <a href="{{ h.url_for('/') }}" class="list-group-item">{{ _('Description of the initiative') }}</a>
+               <a href="http://dev.idom.com:29853" class="list-group-item">{{ _('News, information and updates') }}</a>
+               <a href="http://dev.idom.com:29853/documentacion" class="list-group-item">{{ _(' Documentation and help') }}</a>
+               <a href="http://dev.idom.com:29853/terminos" class="list-group-item">{{ _('Terms and license') }}</a>
              </div>
             </div>
             <div class="col-md-4">
              <div class="list-group footer_nav">
-               <a href="#" class="list-group-item">Conjuntos de datos</a>
-               <a href="#" class="list-group-item">Estadísticas de uso</a>
-               <a href="#" class="list-group-item">SPARQL</a>
-               <a href="#" class="list-group-item">API</a>
+               <a href="http://dev.idom.com:29808/dataset" class="list-group-item">{{ _('Datasets') }}</a>
+               <a href="{{ h.url_for('/stats') }}" class="list-group-item">{{ _('Statistics') }}</a>
+               <a href="{{ h.url_for('/sparql') }}" class="list-group-item">SPARQL</a>
+               <a href="http://dev.idom.com:29853/api" class="list-group-item">API</a>
              </div>
             </div>
             <div class="col-md-4">
@@ -32,11 +32,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8">
-              <p>Portal de Datos Abiertos de la Iniciativa Smart Costa del Sol © 2020 - Todos los derechos reseservados </p>
+              <p>{{ _('Open Data Portal of the Smart Costa del Sol Initiative') }} © 2020 - {{ _('All rights reserved') }} </p>
             </div>
             <div class="col-md-4 links">
               <p class="pull-right">
-                <a href="http://www.segovia.es/index.php/mod.pags/mem.avisoLegal">Aviso legal</a> | <a href="http://www.segovia.es/index.php/mod.pags/mem.accesskey">Accesibilidad</a>
+                <a href="http://www.segovia.es/index.php/mod.pags/mem.avisoLegal">{{ _('Legal Warning') }}</a> | <a href="http://www.segovia.es/index.php/mod.pags/mem.accesskey">{{ _('Accessibility') }}</a>
                 <img src="/aa.png" alt="aa">
               </p>
             </div>

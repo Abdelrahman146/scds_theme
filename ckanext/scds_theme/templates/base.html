@@ -2,7 +2,6 @@
 
 {% block styles %}
   {{ super() }}
-
   {% resource 'scds_theme/bootstrap.css' %}
   {% resource 'scds_theme/style.css' %}
   {% resource 'scds_theme/layout.css' %}
@@ -19,5 +18,5 @@
 
   gtag('config', 'UA-157826753-1');
 </script>
-   {% resource 'scds_theme/custom.js' %}
+{% resource 'scds_theme/custom.js' %}
 {% endblock %}

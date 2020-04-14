@@ -1,6 +1,6 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-
+from ckan.lib.plugins import DefaultTranslation
 
 def list_groups():
     '''Return a sorted list of the groups with the most datasets.'''
@@ -29,7 +29,8 @@ def most_downloaded_datasets():
     sets = sets[:6]
     return sets
 
-class Scds_ThemePlugin(plugins.SingletonPlugin):
+class Scds_ThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
 
